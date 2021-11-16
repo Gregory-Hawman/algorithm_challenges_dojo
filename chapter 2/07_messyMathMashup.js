@@ -9,3 +9,23 @@
 // num, return -1 immediately.
 // For example, if given num is 4, return 7. If given num is 8, return 34.
 // If given num is 15, return -1.
+
+function messyMath(num) {
+    sum = 0;
+    for (let i = 0; i <= num; i++){
+        if( i === ((1/3) * num)){
+            return -1
+        } else if (i % 3 === 0){
+            null
+        } else if (i % 7 === 0){
+            sum = sum + 2*i
+        } else {
+            sum = sum + i
+        }
+    }
+    return sum
+}
+
+console.log(messyMath(4))
+console.log(messyMath(8))
+console.log(messyMath(15))
