@@ -33,7 +33,6 @@ function sumToOne(input){
         }
         input = digitSum
         digitSum = 0
-        
     }
 }
 
