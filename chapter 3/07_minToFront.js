@@ -4,6 +4,46 @@
 // it to [1,4,2,3,5] and return it. As always, do this without using built-in
 // functions.
 
+function insertAt(arr, index, value) {
+    let newArrLength = arr.length
+    for (let i = newArrLength; i >= index; i--) {
+        if (i > index) {
+            arr[i] = arr[i - 1]
+        } else {
+            arr[i] = value
+        }
+    }
+    return arr
+}
+
+function removeAt(arr, index) {
+    let temp = arr[index];
+    for ( let i = index; i < arr.length; i++ ){
+        arr[i] = arr[i+1]
+    };
+    arr[arr.length-1] = temp
+    return arr.pop()
+}
+
+function minToFront(arr) {
+    let min = arr[0]
+    let minIndex = 0
+    
+    for ( let i = 0; i < arr.length; i++){
+        if (arr[i] < min){
+            min = arr[i]
+            minIndex = i
+        }
+    }
+    removeAt(arr, minIndex)
+    insertAt(arr, 0, min)
+    return arr
+}
+
+let testArr = [4,2,1,3,5]
+console.log(minToFront(testArr))
+
+// Other Way To Solve
 // function minToFront(arr) {
 //     let min = arr[0]
 //     let minIndex = 0
@@ -27,45 +67,6 @@
 //     }
 //     return arr
 // }
-function insertAt(arr, index, value) {
-    let newArrLength = arr.length
-    for (let i = newArrLength; i >= index; i--) {
-        if (i > index) {
-            arr[i] = arr[i - 1]
-        } else {
-            arr[i] = value
-        }
-    }
-    return arr
-}
-function removeAt(arr, index) {
-    let temp = arr[index];
-    for ( let i = index; i < arr.length; i++ ){
-        arr[i] = arr[i+1]
-    };
 
-    arr[arr.length-1] = temp
-    return arr.pop()
-}
-
-function minToFront(arr) {
-    let min = arr[0]
-    let minIndex = 0
-    
-    for ( let i = 0; i < arr.length; i++){
-        if (arr[i] < min){
-            min = arr[i]
-            minIndex = i
-        }
-    }
-    // insertAt(arr, 0, min)
-    // removeAt(arr, minIndex+1)
-    removeAt(arr, minIndex)
-    insertAt(arr, 0, min)
-    
-    return arr
-}
-
-let testArr = [4,2,1,3,5]
-
-console.log(minToFront(testArr))
+// let testArr = [4,2,1,3,5]
+// console.log(minToFront(testArr))

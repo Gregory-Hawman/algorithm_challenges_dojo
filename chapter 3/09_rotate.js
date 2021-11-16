@@ -8,6 +8,52 @@
 // arrays/shiftBys in the millions.
 // Fourth: minimize the touches of each element.
 
+function rotateArr(arr, shiftBy){
+    let shifting = true
+    let round = 0
+    let positive
+    let moveL
+    let moveR
+
+    if (shiftBy >= 0){
+        positive = true
+        moveL = 0
+        moveR = -1
+    } else {
+        positive = false
+        moveL = 1
+        moveR = 0
+    }
+
+    let startIndex = positive ? arr.length - 1 : 0
+    let endIndex = positive ? 0 : arr.length - 1
+    let i = startIndex
+
+    while (shifting){
+        let temp = arr[i + moveL]
+        arr[i + moveL] = arr[i + moveR]
+        arr[i+ moveR] = temp
+        positive ? i-- : i++
+
+        if (i === endIndex){
+            round++
+            i = startIndex
+        }
+
+        if (positive && round === shiftBy){
+            shifting = false;
+        } else if (!positive && round === shiftBy * -1){
+            shifting = false;
+        }
+    }
+    return arr
+}
+
+let testArr = [1, 2, 3, 4, 5, 6, 7]
+let testArr2 = [1, 2, 3, 4, 5, 6]
+console.log(rotateArr(testArr, 4))
+console.log(rotateArr(testArr2, -4)) 
+
 // function rotateArr(arr, shiftBy){
 //     let shifting = true
 //     let round = 0
@@ -78,49 +124,7 @@
 //     return arr
 // }
 
-function rotateArr(arr, shiftBy){
-    let shifting = true
-    let round = 0
-    let positive
-    let moveL
-    let moveR
-
-    if (shiftBy >= 0){
-        positive = true
-        moveL = 0
-        moveR = -1
-    } else {
-        positive = false
-        moveL = 1
-        moveR = 0
-    }
-
-    let startIndex = positive ? arr.length - 1 : 0
-    let endIndex = positive ? 0 : arr.length - 1
-    let i = startIndex
-
-    while (shifting){
-        let temp = arr[i + moveL]
-        arr[i + moveL] = arr[i + moveR]
-        arr[i+ moveR] = temp
-        positive ? i-- : i++
-
-        if (i === endIndex){
-            round++
-            i = startIndex
-        }
-
-        if (positive && round === shiftBy){
-            shifting = false;
-        } else if (!positive && round === shiftBy * -1){
-            shifting = false;
-        }
-    }
-    return arr
-}
-
-let testArr = [1, 2, 3, 4, 5, 6, 7]
-let testArr2 = [1, 2, 3, 4, 5, 6]
-
-console.log(rotateArr(testArr, 4))
-console.log(rotateArr(testArr2, -4)) 
+// let testArr = [1, 2, 3, 4, 5, 6, 7]
+// let testArr2 = [1, 2, 3, 4, 5, 6]
+// console.log(rotateArr(testArr, 4))
+// console.log(rotateArr(testArr2, -4)) 

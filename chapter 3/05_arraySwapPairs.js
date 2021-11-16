@@ -4,6 +4,34 @@
 // For example, change input ["Brendan",true,42] to [true,"Brendan",42]. 
 // As with all array challenges, do this without using any built-in array methods.
 
+function swapPairs(arr){
+    for (let i = 0; i < arr.length; i += 2){
+        if(i+1 < arr.length){
+            temp = arr[i];
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
+        }
+    }
+    return arr
+}
+
+let testArr1 = [1, 2, 3]
+let testArr2 = [1, 2, 3, 4]
+let testArr3 = [1, 2, 3, 4, 5]
+console.log(swapPairs(testArr1));
+console.log(swapPairs(testArr2));
+console.log(swapPairs(testArr3));
+
+// Other Ways To Solve
+// function swapPairs(arr){
+//     for (let i = 0; i+1 < arr.length; i += 2){
+//         temp = arr[i];
+//         arr[i] = arr[i+1]
+//         arr[i+1] = temp
+//     }
+//     return arr
+// }
+
 // function swapPairs(arr){
 //     if (arr.length % 2 === 0){
 //         for (let i = 0; i < arr.length; i += 2){
@@ -38,33 +66,10 @@
 //     return arr
 // }
 
-// function swapPairs(arr){
-    
+// let testArr1 = [1, 2, 3]
+// let testArr2 = [1, 2, 3, 4]
+// let testArr3 = [1, 2, 3, 4, 5]
 
-//     for (let i = 0; i < arr.length; i += 2){
-//         if(i+1 < arr.length){
-//             temp = arr[i];
-//             arr[i] = arr[i+1]
-//             arr[i+1] = temp
-//         }
-//     }
-//     return arr
-// }
-
-// function swapPairs(arr){
-    
-//     for (let i = 0; i+1 < arr.length; i += 2){
-//         temp = arr[i];
-//         arr[i] = arr[i+1]
-//         arr[i+1] = temp
-//     }
-//     return arr
-// }
-
-let testArr1 = [1, 2, 3]
-let testArr2 = [1, 2, 3, 4]
-let testArr3 = [1, 2, 3, 4, 5]
-
-console.log(swapPairs(testArr1));
-console.log(swapPairs(testArr2));
-console.log(swapPairs(testArr3));
+// console.log(swapPairs(testArr1));
+// console.log(swapPairs(testArr2));
+// console.log(swapPairs(testArr3));

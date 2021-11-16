@@ -2,13 +2,11 @@
 // projects. Given arr and N, return the Nth-largest element, where (N-
 // 1) elements are larger. Return null if needed.
 
-
 // sort and then find is the easiest
-````
-
+// NOT SOLVED YET
 function nthLargest(arr, n){
     let smallest = arr[0]
-    for (let i  =0; i < arr.length; i++) {
+    for (let i  = 0; i < arr.length; i++) {
         if (arr[i] < smallest) {
             smallest = arr[i]
         }

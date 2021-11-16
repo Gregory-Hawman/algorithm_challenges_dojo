@@ -10,21 +10,16 @@
 
 function removeAt(arr, index) {
     let temp = arr[index];
-
     for ( let i = index; i < arr.length; i++ ){
         arr[i] = arr[i+1]
     };
-
     arr[arr.length-1] = temp
     arr.pop()
 }
 
-
-
 function skylineHeights(arr){
     let max = 0;
     let i = 0;
-    
     while (i < arr.length) {
         if (arr[i] > max){
             max = arr[i];
@@ -37,5 +32,4 @@ function skylineHeights(arr){
 }
 
 let testArr = [-1, 1, 1, 3, 7, 3, 4, 3, 5, 3]
-
 console.log(skylineHeights(testArr));

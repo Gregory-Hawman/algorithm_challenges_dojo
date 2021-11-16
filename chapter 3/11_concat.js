@@ -17,5 +17,4 @@ function concat(arr1, arr2) {
 
 let testArr1 = [1, 2, 3];
 let testArr2 = ['a', 'b', 'c']
-
 console.log(concat(testArr1, testArr2))

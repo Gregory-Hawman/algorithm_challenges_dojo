@@ -11,29 +11,13 @@ function removeAt(arr, index) {
     for ( let i = index; i < arr.length; i++ ){
         arr[i] = arr[i+1]
     };
-
     arr[arr.length-1] = temp
     return arr.pop()
 }
 
-// function removeDuplicates(arr) {
-//     let i = 0
-//     while (i < arr.length){
-//         if (arr[i] === arr[i+1]){
-//             removeAt(arr, i+1)
-//         } else {
-//             i++
-//         }
-//     }
-//     return arr
-// }
-
 function removeDuplicates(arr) {
-
     for (let i = 0; i < arr.length; i++){
-        console.log(arr[i], arr[i+1])
         if (arr[i] === arr[i+1]){
-            console.log('removing')
             removeAt(arr, i+1)
             i--
         }
@@ -41,18 +25,32 @@ function removeDuplicates(arr) {
     return arr
 }
 
-function removeDuplicates2(arr) {
-    const set = new Set();
- 
-
-    for (let i = 0; i< arr.length; i++){
-        set.add(arr[i])
-    }
-    const array = [...set]
-    return array
-}
-
-let testArr = ['apple', 'banana', 'banana', 'cat', 'dog', 'dog', 'dog', 'elephant', 'fish', 'fish', 'goat', 'horse', undefined]
-
+let testArr = ['apple', 'banana', 'banana', 'cat', 'dog', 'dog', 'dog', 'elephant', 'fish', 'fish', 'goat', 'horse']
 console.log(removeDuplicates(testArr))
-console.log(removeDuplicates2(testArr))
+
+// Old More Complicated Way To Solve
+// function removeDuplicates(arr) {
+//     let i = 0
+//     while (i < arr.length){
+//         if (arr[i] === arr[i+1]){
+//             removeAt(arr, i+1)
+//             i--
+//         } else {
+//             i++
+//         }
+//     }
+//     return arr
+// }
+
+// Cheaters Way
+// function removeDuplicates2(arr) {
+//     const set = new Set();
+//     for (let i = 0; i< arr.length; i++){
+//         set.add(arr[i])
+//     }
+//     const array = [...set]
+//     return array
+// }
+
+// let testArr = ['apple', 'banana', 'banana', 'cat', 'dog', 'dog', 'dog', 'elephant', 'fish', 'fish', 'goat', 'horse', undefined]
+// console.log(removeDuplicates2(testArr))

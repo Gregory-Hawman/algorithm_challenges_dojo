@@ -17,7 +17,6 @@ function removeNegatives(arr) {
             removeAt(arr, i);
         }
     }
-
     return arr
 }
 

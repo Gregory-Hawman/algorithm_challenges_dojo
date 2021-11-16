@@ -16,6 +16,5 @@ function reverse(arr) {
 
 let testArr = [1, 2, 3, 4, 5, 6];
 let testArr2 = [1, 2, 3, 4, 5, 6, 7];
-
 console.log(reverse(testArr));
 console.log(reverse(testArr2));
