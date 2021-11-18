@@ -9,11 +9,11 @@
 function isCreditCardValid(arr) {
     let last = arr.pop();
     for ( let i = arr.length - 1; i > 0; i -= 2){
-        arr[i] = arr[i] * 2
+        arr[i] *= 2
     }
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > 9){
-            arr[i] = arr[i] - 9
+            arr[i] -= 9
         }
     }
     let sum = 0
@@ -22,11 +22,7 @@ function isCreditCardValid(arr) {
     }
     sum = sum + last
 
-    if (sum % 10 === 0){
-        return true
-    } else {
-        return false
-    }
+    return(sum % 10 === 0)
 }
 
 let testArr1 = [1,5,3,6,5,7,7,8,9,3,1,8,5]
