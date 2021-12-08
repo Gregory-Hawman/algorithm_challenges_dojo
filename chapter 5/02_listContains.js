@@ -3,35 +3,53 @@
 // return whether val is found in any node in the list. 
 
 class SList {
-    constructor(head){
-        this.head = head;
+    constructor(){
+        this.head = null;
     }
 
     addFront(val) {
         if (this.head === null){
-            const newNode = new Node(val, null)
+            const newNode = new Node(val)
                 this.head = newNode;
                 return
         }
-        const newNode = new Node(val, this.head);
+        const newNode = new Node(val);
+        newNode.next = this.head;
         this.head = newNode;
     }
 
+
     containsVal(val){
-        const currentNode = this.head
-        if (this.head === val){
-            return
+        if (!this.head){
+            return false
         }
+        // make the head the current node 
+        let currentNode = this.head
+        console.log(currentNode)
+        while (currentNode.next){
+            if (currentNode.val === val){
+                // if current node is val return true
+                return true
+            }
+            currentNode = currentNode.next
+        }
+        return false 
     }
 }
 
 class Node {
-    constructor(val, next) {
+    constructor(val) {
         this.val = val;
-        this.next = next;
+        this.next = null;
     }
 }
 
 const myList = new SList();
+console.log(myList.containsVal('Rad'))
 myList.addFront('Rudy')
-console.log(myList.head)
+myList.addFront('Tad')
+myList.addFront('Cory')
+myList.addFront('Eric')
+myList.addFront('Shaun')
+
+

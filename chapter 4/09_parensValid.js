@@ -4,3 +4,9 @@
 // return true. Given "N(0(p)3", return false: not every parenthesis is
 // closed. Given "N(0)t )0(k", return false, because the underlined ")"
 // is premature: there is nothing open for it to close.
+
+// loop through the given string
+// if you find ) first, return false;
+// if you find ( count ++
+// if you find ) count --
+// if count === 0 return true, else return false
