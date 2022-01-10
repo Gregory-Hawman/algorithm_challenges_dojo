@@ -21,14 +21,14 @@ function SLQueue() {
     var tail = null; // ->Node objs
 }
 
-1. [] SLQueue: Enqueue
-2. [] SLQueue: Front
-3. [] SLQueue: Is Empty
-4. [] SLQueue: Compare Queues
-5. [] SLQueue: Dequeue
-6. [] SLQueue: Contains
-7. [] SLQueue: Size
-8. [] SLQueue: Remove Minimums
+1. [x] SLQueue: Enqueue
+2. [x] SLQueue: Front
+3. [x] SLQueue: Is Empty
+4. [x] SLQueue: Compare Queues
+5. [x] SLQueue: Dequeue
+6. [x] SLQueue: Contains
+7. [x] SLQueue: Size
+8. [x] SLQueue: Remove Minimums
 9. [] SLQueue: Interleave Queue
 
 Stacks
